@@ -1,0 +1,8 @@
+[package]
+name = "sdl_game"
+version = "0.1.0"
+authors = ["DanteFalzone0 <dante.j.falzone@protonmail.com>"]
+edition = "2018"
+
+[dependencies]
+sdl2 = "0.32"
