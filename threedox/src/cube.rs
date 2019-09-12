@@ -84,6 +84,24 @@ impl Cube {
             );
         }
     }
+    pub fn y_rot_self(&mut self, degrees: f64) {
+        for point in &mut self.vertex {
+            *point = self.space.y_rotation(
+                *point,
+                self.center,
+                degrees
+            );
+        }
+    }
+    pub fn z_rot_self(&mut self, degrees: f64) {
+        for point in &mut self.vertex {
+            *point = self.space.z_rotation(
+                *point,
+                self.center,
+                degrees
+            );
+        }
+    }
 
     // oh yeah, it's big brain time
     pub fn draw_self(&self,
@@ -135,4 +153,3 @@ pub fn construct_cube(center: CoordTriple, edge_length: f64, space: Space) -> Cu
 
     cube
 }
-
