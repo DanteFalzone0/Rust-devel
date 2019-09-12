@@ -47,7 +47,9 @@ fn main() -> Result<(), String> {
     let mut event_pump = sdl_context.event_pump()?;
     'running: loop {
         cube.x_rot_self(0.5);
-        
+        cube.y_rot_self(0.5);
+        cube.z_rot_self(0.5);
+
         for event in event_pump.poll_iter() {
             match event {
                 Event::Quit {..} | Event::KeyDown {
