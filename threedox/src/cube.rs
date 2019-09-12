@@ -11,7 +11,8 @@ pub struct Cube {
     pub center:      CoordTriple,
     pub edge_length: f64,
     pub space:       Space
-}
+} /* Making all this struct's fields public bc I don't want
+     to write getting and setting functions right now */
 
 impl Cube {
     pub fn set_vertices(&mut self) {
@@ -104,8 +105,8 @@ impl Cube {
     }
 
     // oh yeah, it's big brain time
-    pub fn draw_self(&self,
-                     renderer: &mut sdl2::render::Canvas<sdl2::video::Window>) {
+    #[allow(unused_must_use)]
+    pub fn draw_self(&self, renderer: &mut sdl2::render::Canvas<sdl2::video::Window>) {
         for i in 0..7 {
             renderer.draw_line(
                 self.space.convert_to_2d(self.vertex[i]),
