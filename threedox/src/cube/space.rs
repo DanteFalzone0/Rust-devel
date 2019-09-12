@@ -35,17 +35,15 @@ impl Space {
 
     // Take a 3d coordinate and project it onto a 2d screen
     pub fn convert_to_2d(&self, q: CoordTriple) -> Point {
-        let ret = Point::new(
-            ((q.x + (self.screen_x * (q.z / self.depth))) /
-            ((q.z / self.depth) + 1.0)) as i32,
-            ((q.y + (self.screen_y * (q.z / self.depth))) /
-            ((q.z / self.depth) + 1.0)) as i32
-        );
-
         if q.z > (-1.0 * self.depth) {
-            ret
+            Point::new(
+                ((q.x + (self.screen_x * (q.z / self.depth))) /
+                ((q.z / self.depth) + 1.0)) as i32,
+                ((q.y + (self.screen_y * (q.z / self.depth))) /
+                ((q.z / self.depth) + 1.0)) as i32
+            )
         } else {
-            // point that won't appear on the screen
+            // Point that won't appear onscreen
             Point::new(-1, -1)
         }
     }
