@@ -104,40 +104,42 @@ impl Cube {
         }
     }
 
-    // oh yeah, it's big brain time
-    #[allow(unused_must_use)]
-    pub fn draw_self(&self, renderer: &mut sdl2::render::Canvas<sdl2::video::Window>) {
+    // Function for drawing the cube
+    // TODO: make this not so wide
+    pub fn draw_self(&self, renderer: &mut sdl2::render::Canvas<sdl2::video::Window>) -> Result<(), String> {
         for i in 0..7 {
             renderer.draw_line(
                 self.space.convert_to_2d(self.vertex[i]),
                 self.space.convert_to_2d(self.vertex[i + 1])
-            ); // TODO: implement error handling here
+            ).map_err(|e| e.to_string())?;
         }
 
         renderer.draw_line(
             self.space.convert_to_2d(self.vertex[7]),
             self.space.convert_to_2d(self.vertex[0])
-        );
+        ).map_err(|e| e.to_string())?;
 
         renderer.draw_line(
             self.space.convert_to_2d(self.vertex[0]),
             self.space.convert_to_2d(self.vertex[3])
-        );
+        ).map_err(|e| e.to_string())?;
 
         renderer.draw_line(
             self.space.convert_to_2d(self.vertex[4]),
             self.space.convert_to_2d(self.vertex[7])
-        );
+        ).map_err(|e| e.to_string())?;
 
         renderer.draw_line(
             self.space.convert_to_2d(self.vertex[2]),
             self.space.convert_to_2d(self.vertex[5])
-        );
+        ).map_err(|e| e.to_string())?;
 
         renderer.draw_line(
             self.space.convert_to_2d(self.vertex[1]),
             self.space.convert_to_2d(self.vertex[6])
-        );
+        ).map_err(|e| e.to_string())?;
+
+        Ok(())
     }
 
 }
