@@ -48,7 +48,7 @@ fn main() -> Result<(), String> {
     'running: loop {
         cube.x_rot_self(0.5);
         cube.y_rot_self(0.5);
-        cube.z_rot_self(0.5);
+        cube.z_rot_self(0.1);
 
         for event in event_pump.poll_iter() {
             match event {
@@ -65,7 +65,7 @@ fn main() -> Result<(), String> {
         renderer.clear();
         renderer.set_draw_color(Color::RGB(0, 255, 80));
 
-        cube.draw_self(&mut renderer);
+        cube.draw_self(&mut renderer).map_err(|e| e.to_string())?;
 
         renderer.present();
     }
