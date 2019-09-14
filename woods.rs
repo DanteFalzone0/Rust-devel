@@ -1,3 +1,9 @@
+/* 13/9/2019
+
+I feel like it's worth acknowledging that this program is not very good.
+*/
+
+
 use std::io;
 
 fn main() {
@@ -27,6 +33,7 @@ fn main() {
     // Although I must admit that the way Rust takes arguments strikes me as a
     // little unintuitive, coming from Python and C++. But it's not *too* crazy.
     fn evaluate_choice_0(input: String) {
+        // 13/9/2019 - if I cared enough I rewrite this with `match`.
         if input == "0" {
             get_up();
         } else if input == "1" {
