@@ -7,3 +7,6 @@ with some of the SDL2 API in C and C++, so I already have a sense of how
 SDL2 is generally used.
 
 At some point I ought to write up a tutorial for using SDL2 in Rust...
+
+
+Edit 13/9/2019: I'm considering moving threedox into its own repository.
