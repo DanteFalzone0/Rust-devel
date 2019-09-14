@@ -2,3 +2,6 @@ TODO: rearrange the directory structure so this damn thing
 compiles
 
 EDIT 12 September 2019: accomplished the above TODO
+
+TODO: add support for non-hardcoded models, either in an
+already-existing file format or in a new format
